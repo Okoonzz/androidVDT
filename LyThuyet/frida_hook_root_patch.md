@@ -34,7 +34,7 @@ Target app
 
 - Tham khảo tại [link1](https://medium.com/@ahmedafatah/android-security-for-dummies-root-detection-695bd4d90db8), [link2](https://docs.talsec.app/appsec-articles/articles/simple-root-detection-implementation-and-verification)
 
-![image.png](attachment:8113990e-6759-4a73-9803-b45afe10ae81:image.png)
+![image](rootcheck.png)
 
 ```cpp
 [RootDetection.kt]
