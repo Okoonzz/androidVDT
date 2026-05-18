@@ -442,8 +442,6 @@ class HookingDetection(private val context: Context) {
             "re.frida",
             "xposed",
             "lsposed",
-            "substrate",
-            "cydia"
         )
 
         private val SUSPICIOUS_THREAD_KEYWORDS = listOf(
