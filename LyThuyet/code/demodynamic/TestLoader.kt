@@ -42,6 +42,7 @@ object PluginLoader {
         //create path to contain decrypt
         //path private ex:/data/user/0/com.example.dynamicloaderdemo/files/plugins
         //write decrypt byte into testass-plugin.jar on disk, then set readonly
+        //filesDir là thư mục nội bộ của app sau khi app đã được cài và chạy, muốn có file ở đó thì phải xử lý lúc runtime
         val pluginDir = File(context.filesDir, "plugins")
         pluginDir.mkdirs()
 
