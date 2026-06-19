@@ -327,6 +327,7 @@ Flutter/Dart
     
     - `a11.b(jVar2, new IntentFilter(new String(bArr2, charset).intern()));` → đăng ký receiver jVar2 để nghe Intent action TALSEC_INFO
         - Trace tiếp theo `ra.c.b` sẽ ra BroadcastReceiver hoặc sử dụng script để check tham số đang chứa là string gì.
+        - `ra.c` là nơi xử lý intent bao gồm send broadcast, register receiver (nội bộ), không thấy các hàm mặc định như registerReceiver ,.. vì app đang custom nội bộ 
     - `vg.e.f(context, config)` → chạy Talsec scanner (presume)
     - Dùng script này để trace và hiểu intent ở đoạn code đó đang làm gì, vì mã hoàn toàn dựa trên runtime, việc static là không thể.
         - Script này sử dụng Exception để trace stack. Bằng cách tạo ra 1 Exception mới. Khi Exception được tạo, JVM sẽ ghi lại stack hiện tại
@@ -1079,7 +1080,7 @@ java.lang.Exception
 
 - Từ log trên thấy thêm được
     - `ug.q2` → check HMA bằng cách resolveContentProvider, setClassName
-    - `ug.r0` → gửi intent thông báo kèm lý do
+    - `ug.r0` → gửi intent thông báo kèm lý do (xem tại `f50015c` ngay constructor) sau khi check xong (dựa vào thứ tự log và stack log `ug.q2.H`;  `ug.q2.a` và **guess**)
 
 ⇒ Vậy intent được các anh mentor nhắc đến chắc chắn sẽ là `TALSEC_INFO` và cũng đã phân tích được nơi nào có nhiệm vụ gửi kết quả cuối cùng
 
